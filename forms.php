@@ -1,5 +1,12 @@
 
-<?php include ("index.php") ?>
+<?php
+include ("index.php");
+include("db.php");
+$query="SELECT * from experts";
+$result=mysqli_query($connection,$query);
+while($row=mysqli_fetch_array($result))
+echo $row['expertName'];
+?>
 <style media="screen">
 .form-horizontal .control-label{
   text-align: left;
@@ -19,7 +26,7 @@
                 <div class="row">
                     <div class="col-lg-12">
                         <h1 class="page-header">
-                            Forms
+                            All Projects
                         </h1>
 
                     </div>
@@ -65,6 +72,22 @@
                                         <input type="text" class="form-control" name="amount" placeholder="Type">
                                     </div>
                             </div>
+                             <br>
+                            <div class="form-group">
+                              <label for="dropDown" class="col-md-2 control-label">Experts</label>
+                                 <div class="col-md-4">
+                                   <select name= "expertName" id= "update_indication_id" class="form-control" required>
+                                     <option selected="selected" value="">None</option>
+                                      <?php
+                                        $sql = "SELECT * From experts";
+                                        $result=mysqli_query($connection,$sql);
+                                        while($row=mysqli_fetch_array($result))
+                                        echo "<option value='". $row['expertName'] . "'>" . $row['expertName'] . "</option>";
+                                      ?>
+                                      </select>
+                                 </div>
+                            </div>
+
                           <div class="container">
                                 <div class="col-md-12">
                                     <input type="submit" class="btn btn-primary center-block" name="Submit">

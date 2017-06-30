@@ -32,7 +32,7 @@
                 </div>
                 <div class="row" >
 
-                    <div class="col-lg-12">
+                    <div class="col-lg-24">
 
 
                         <div class="table-responsive">
@@ -46,12 +46,14 @@
                                 <thead>
                                     <tr>
                                         <th class="col-xs-1">Id</th>
-                                        <th class="col-xs-1">Client Name</th>
-                                        <th class="col-xs-1">Assignment</th>
-                                        <th class="col-xs-1">Date</th>
-                                        <th class="col-xs-1">Due Date</th>
-                                        <th class="col-xs-1">Amount ($) </th>
-                                        <th class="col-xs-1">Expert</th>
+                                        <th class="col-xs-2">Client Name</th>
+                                        <th class="col-xs-2">Assignment</th>
+                                        <th class="col-xs-2">Date</th>
+                                        <th class="col-xs-2">Due Date</th>
+                                        <th class="col-xs-2">Amount ($) </th>
+                                        <th class="col-xs-2">Expert</th>
+                                        <th class="col-xs-2" colspan="2">Action</th>
+
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -61,13 +63,14 @@
 
                                           echo "<tr>";
                                           echo "<td>" .$rows['clientId']. "</td>";
-                                          echo "<td>" .$rows['clientName']. "</td>" ;
+                                          echo "<td>" .$rows['clientName']. "</td>";
                                           echo "<td>" .$rows['assignment']. "</td>";
-                                          echo "<td>" .$rows['date']. "</td>" ;
-                                          echo "<td>" .$rows['duedate']. "</td>" ;
+                                          echo "<td>" .$rows['date']. "</td>";
+                                          echo "<td>" .$rows['duedate']. "</td>";
                                           echo "<td>" .$rows['amount']. "</td>";
-                                          echo "<td>" .$rows['expertId']. "</td>";
-
+                                          echo "<td>" .$rows['expertName']. "</td>";
+                                          echo "<td><a href=\"edit.php?id=".$rows['clientId']."\"><span class='glyphicon glyphicon-edit'>Edit</span></a></td>";
+                                          echo  "<td><a href=\"delete.php?id=".$rows['clientId']."\"><span class='glyphicon glyphicon-delete'>Delete</span></a></td>";
                                           echo "</tr>";
                                         }
                                     ?>

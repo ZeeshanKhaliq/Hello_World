@@ -1,7 +1,4 @@
-<?php
-    session_start();
-    echo $_SESSION['userName'];
- ?>
+
 
 <html lang="en">
 
@@ -31,7 +28,7 @@
             </div>
             <ul class="nav navbar-right top-nav">
                 <li class="dropdown">
-                  <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i><?php echo $_SESSION['userName']; ?> <b class="caret"></b></a>
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i>Muhammad Ifrahim <b class="caret"></b></a>
                     <ul class="dropdown-menu">
                         <li class="divider"></li>
                         <li>

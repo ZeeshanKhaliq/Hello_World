@@ -5,16 +5,16 @@
            $senderName=$_POST["senderName"];
            $reciverName=$_POST["reciverName"];
            $assignment=$_POST["assignment"];
-           $Date=$_POST["Date"];
+           $Date=$_POST["date"];
            $amount=$_POST["amount"];
 
 
    $sql="INSERT INTO `payments` (`senderName`, `reciverName`, `assignment`, `date`, `amount`, `paymentId`)
-  VALUES ('{$senderName}', '{$reciverName}', '{$assignment}', '{$Date}', '{$amount}', NULL); ";
+  VALUES ('{$senderName}', '{$reciverName}', '{$assignment}', '{$Date}', '{$amount}', NULL)";
 
   $result=mysqli_query($connection,$sql);
     if ($result==true) {
-      header("Location: addPayments.php");
+      header("Location: payments.php");
     }
     else {
       echo "error";

@@ -12,16 +12,6 @@
      }
  ?>
 
- <script type="text/javascript">
-
-
-   var btn = document.getElementById('myBtn');
-   btn.addEventListener('click', function() {
-     document.location.href = '<?php echo table.php; ?>';
-   });
-
-
- </script>
  <?php include ("index.php"); ?>
 
 

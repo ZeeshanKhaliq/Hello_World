@@ -37,11 +37,12 @@
                             <table class="table table-bordered table-hover table-striped" id="header-fixed" style="width:100%" >
                                 <thead>
                                     <tr>
-                                        <th class="col-xs-1">Sender Name</th>
-                                        <th class="col-xs-1">Reciver Name</th>
-                                        <th class="col-xs-1">Assignment</th>
-                                        <th class="col-xs-1">Date</th>
-                                        <th class="col-xs-1">Amount ($) </th>
+                                        <th class="col-xs-2">Sender Name</th>
+                                        <th class="col-xs-2">Reciver Name</th>
+                                        <th class="col-xs-2">Assignment</th>
+                                        <th class="col-xs-2">Date</th>
+                                        <th class="col-xs-2">Amount ($) </th>
+                                        <th class="col-xs-2" colspan="2">Amount ($) </th>
 
                                     </tr>
                                 </thead>
@@ -56,7 +57,8 @@
                                           echo "<td>" .$rows['assignment']. "</td>";
                                           echo "<td>" .$rows['date']. "</td>" ;
                                           echo "<td>" .$rows['amount']. "</td>" ;
-
+                                          echo "<td><a href=\"editPayments.php?id=".$rows['paymentId']."\"><span class='glyphicon'>Edit</span></a></td>";
+                                          echo  "<td><a href=\"deletePayments.php?id=".$rows['paymentId']."\"><span class='glyphicon'>Delete</span></a></td>";
 
                                           echo "</tr>";
                                         }
