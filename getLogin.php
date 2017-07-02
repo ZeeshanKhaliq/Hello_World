@@ -10,14 +10,13 @@
      if ($userName!=null && $password !=null) {
 
           $sql="Select * from users Where userName='".$userName."' AND password='".$password."' ";
+          $result=mysqli_query($connection,$sql);
+          //if (mysql_num_rows($result)>0) {
 
-          $rows=mysqli_query($connection,$sql);
-
-                 $_SESSION['userName']=$_POST['userName'];
-                 echo $_SESSION['userName'];
-                 header("Location:index.php");
-
-        }
+            $_SESSION['userName']=$userName;
+            header("Location:index.php");
+          //}
+       }
    }
 
  ?>

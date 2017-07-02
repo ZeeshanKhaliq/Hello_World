@@ -1,4 +1,8 @@
+<?php
+ session_start();
+ $userName=$_SESSION['userName'];
 
+ ?>
 
 <html lang="en">
 
@@ -13,6 +17,8 @@
     <link href="public/css/sb-admin.css" rel="stylesheet">
     <link href="public/css/plugins/morris.css" rel="stylesheet">
     <link href="public/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
 
 
 </head>
@@ -28,7 +34,7 @@
             </div>
             <ul class="nav navbar-right top-nav">
                 <li class="dropdown">
-                  <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i>Muhammad Ifrahim <b class="caret"></b></a>
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i><?php echo " ".$userName;?><b class="caret"></b></a>
                     <ul class="dropdown-menu">
                         <li class="divider"></li>
                         <li>
@@ -41,7 +47,7 @@
             <div class="collapse navbar-collapse">
                 <ul class="nav navbar-nav side-nav">
                     <li>
-                      <a href="javascript:;" data-toggle="collapse" data-target="#demo"><i class="glyphicon glyphicon-user"></i>Users<i class="fa fa-fw fa-caret-down"></i></a>
+                      <a href="javascript:;" data-toggle="collapse" data-target="#demo"><i class="glyphicon glyphicon-user"></i> Users<i class="fa fa-fw fa-caret-down"></i></a>
                       <ul id="demo" class="collapse">
                           <li>
                               <a href="table.php">Clients</a>
@@ -51,21 +57,47 @@
                           </li>
                       </ul>
                   </li>
+
                   <li>
+                      <a href="javascript:;" data-toggle="collapse" data-target="#proj"><i class="fa fa-list"></i> Projects<i class="fa fa-fw fa-caret-down"></i></a>
+                    <ul id="proj" class="collapse">
+                        <li>
                         <a href="table.php"><i class="glyphicon glyphicon-th-list"></i> Projects</a>
-                  </li>
-                  <li>
+                        </li>
+                        <li>
                         <a href="forms.php"><i class="fa fa-fw fa-table"></i>Add Projects</a>
+                        </li>
+                    </ul>
                   </li>
+
                   <li>
-                        <a href="payments.php"><i class="fa fa-fw fa-edit"></i>Payments</a>
+                      <a href="javascript:;" data-toggle="collapse" data-target="#payments"><i class="fa fa-usd"></i> Payments<i class="fa fa-fw fa-caret-down"></i></a>
+                          <ul id="payments" class="collapse">
+                            <li>
+                                  <a href="payments.php"><i class="fa fa-fw fa-edit"></i> Payments</a>
+                            </li>
+                            <li>
+                                  <a href="addPayments.php"><i class="fa fa-fw fa-edit"></i> Payments From Clients</a>
+                            </li>
+                            <li>
+                               <a href="addPayments.php"><i class="fa fa-fw fa-edit"></i> Payments to Experts</a>
+                            </li>
+
+                          </ul>
                   </li>
-                  <li>
-                        <a href="addPayments.php"><i class="fa fa-fw fa-edit"></i>Add Payments</a>
-                  </li>
-                  <li>
-                        <a href="forms.html"><i class="glyphicon glyphicon-user" aria-hidden="true"></i>Add User</a>
-                  </li>
+
+                <li>
+                    <a href="javascript:;" data-toggle="collapse" data-target="#second"><i class="glyphicon glyphicon-user"></i> Experts<i class="fa fa-fw fa-caret-down"></i></a>
+                        <ul id="second" class="collapse">
+
+                            <li>
+                                <a href="#"><i class="fa fa-users"></i> All Experts</a>
+                            </li>
+                            <li>
+                                <a href="table.php"><i class="fa fa-user" aria-hidden="true"></i> Add Expert</a>
+                            </li>
+                        </ul>
+                </li>
 
                 </ul>
           </div>

@@ -30,7 +30,8 @@
                                 <label for="inputType" class="col-md-2 control-label">Sender Name</label>
                                     <div class="col-md-4">
                                         <input type="text" class="form-control" name="senderName" placeholder="Sender Name" value="<?php echo $row["senderName"]?>">
-                                      
+                                        <input type="hidden" class="form-control" name="Id" placeholder="Sender Name" value="<?php echo $row["paymentId"]?>">
+
                                     </div>
                             </div>
                             <br>

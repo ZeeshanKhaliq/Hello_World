@@ -2,17 +2,13 @@
 <!DOCTYPE html>
 <html>
 
-
-
-
-
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, shrink-to-fit=no, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="">
-    <title>SB Admin - Bootstrap Admin Template</title>
+    <title>Project Managment System</title>
     <link href="public/css/bootstrap.min.css" rel="stylesheet">
     <link href="public/css/sb-admin.css" rel="stylesheet">
     <link href="public/css/plugins/morris.css" rel="stylesheet">

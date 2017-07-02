@@ -9,7 +9,7 @@
      $amount=$_POST["amount"];
      $duedate=$_POST["dueDate"];
      $expertName=$_POST["expertName"];
-     //
+     
      $query="Update clients set clientName='$clientName',Assignment='$Assignment',Date='$Date',amount='$amount',duedate='$duedate',expertName='$expertName'
     where clientId='".$clientId."'";
 
