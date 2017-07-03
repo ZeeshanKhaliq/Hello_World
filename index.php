@@ -62,7 +62,7 @@
                       <a href="javascript:;" data-toggle="collapse" data-target="#proj"><i class="fa fa-list"></i> Projects<i class="fa fa-fw fa-caret-down"></i></a>
                     <ul id="proj" class="collapse">
                         <li>
-                        <a href="table.php"><i class="glyphicon glyphicon-th-list"></i> Projects</a>
+                        <a href="Project.php"><i class="glyphicon glyphicon-th-list"></i> Projects</a>
                         </li>
                         <li>
                         <a href="forms.php"><i class="fa fa-fw fa-table"></i>Add Projects</a>

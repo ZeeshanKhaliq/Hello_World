@@ -50,9 +50,10 @@
                                         <th class="col-xs-2">Assignment</th>
                                         <th class="col-xs-2">Date</th>
                                         <th class="col-xs-2">Due Date</th>
-                                        <th class="col-xs-2">Amount ($) </th>
+                                        <th class="col-xs-1">Amount($)</th>
                                         <th class="col-xs-2">Expert</th>
                                         <th class="col-xs-2" colspan="2">Action</th>
+                                        <th class="col-xs-2" >Payment Status</th>
 
                                     </tr>
                                 </thead>
@@ -71,6 +72,7 @@
                                           echo "<td>" .$rows['expertName']. "</td>";
                                           echo "<td><a href=\"edit.php?id=".$rows['clientId']."\"><span class='glyphicon glyphicon-edit'>Edit</span></a></td>";
                                           echo  "<td><a href=\"delete.php?id=".$rows['clientId']."\"><span class='glyphicon glyphicon-delete'>Delete</span></a></td>";
+                                          echo "<td><a href=\"addPayments.php?act=edit&id=".$rows['clientId']."\"><span class='glyphicon glyphicon-delete'>Payment Status</span></a></td>";
                                           echo "</tr>";
                                         }
                                     ?>

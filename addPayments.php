@@ -1,5 +1,18 @@
 
-<?php include ("index.php") ?>
+<?php
+include ("index.php");
+include ("db.php");
+  if ($_GET['act']=="edit") {
+         $Id=$_GET['id'];
+         $sql="Select * from clients where clientId='".$Id."'";
+         $result=mysqli_query($connection,$sql);
+         $rows=mysqli_fetch_array($result);
+
+       }
+
+
+?>
+
 <style media="screen">
 .form-horizontal .control-label{
   text-align: left;
@@ -18,7 +31,7 @@
 
                     </div>
                 </div>
-                <!-- /.row -->
+
 
                 <div class="row">
                     <div class="col-lg-12">
@@ -27,37 +40,45 @@
                             <div class="form-group">
                                 <label for="inputType" class="col-md-2 control-label">Sender Name</label>
                                     <div class="col-md-4">
-                                        <input type="text" class="form-control" name="senderName" placeholder="Sender Name">
+                                      <input type="text" class="form-control" name="senderName" placeholder="Sender Name" value="<?php echo isset($_GET['act']) && $_GET['act']=="edit" ?  $rows['clientName'] : ""; ?>" >
+                                </div>
+                            </div>
+                            <br>
+                            <div class="form-group">
+                                <label for="inputType" class="col-md-2 control-label">Payment Procedure</label>
+                                    <div class="col-md-4">
+
+                                       <select class="" name="paymentProcedure">
+
+                                       </select>
+
                                     </div>
                             </div>
                             <br>
                             <div class="form-group">
                                 <label for="inputType" class="col-md-2 control-label">Reciver Name</label>
+                                  <?php
+                                    $sql="select * from recivers";
+                                    ?>
                                     <div class="col-md-4">
-                                        <input type="text" class="form-control" name="reciverName" placeholder="Reciver Name">
+                                        <input type="text" class="form-control" name="reciverName" placeholder="Reciver Name" required>
                                     </div>
                             </div>
                             <br>
                             <div class="form-group">
                                 <label for="inputType" class="col-md-2 control-label">Assignment</label>
                                     <div class="col-md-4">
-                                        <input type="text" class="form-control" name="assignment" placeholder="Assignment">
+                                        <input type="text" class="form-control" name="assignment" placeholder="Assignment" value="<?php echo isset($_GET['act']) && $_GET['act']=="edit" ?  $rows['assignment'] : ""; ?>">
                                     </div>
                             </div>
                             <br>
                             <div class="form-group" id="datetimePickerId">
                                 <label for="inputType" class="col-md-2 control-label"> Date</label>
                                     <div class="col-md-4">
-                                        <input type="text"  class="form-control" name="date" placeholder="Date"  >
-                                        <span class="input-group-addon">
-                                            <span class="glyphicon glyphicon-calendar"></span>
-                                        </span>
+                                        <input type="text"  class="form-control" name="date" placeholder="Date" value="<?php echo isset($_GET['act']) && $_GET['act']=="edit" ?  $rows['date'] : ""; ?>" >
+
                                     </div>
-                                    <script type="text/javascript">
-                                      $(function(){
-                                        $('#datetimePickerId').datetimepicker();
-                                      });
-                                    </script>
+
                             </div>
 
                             <br>
@@ -68,7 +89,7 @@
                             <div class="form-group">
                                 <label for="inputType" class="col-md-2 control-label">Amount</label>
                                     <div class="col-md-4">
-                                        <input type="text" class="form-control" name="amount" placeholder="Type">
+                                        <input type="text" class="form-control" name="amount" placeholder="Type" value="<?php echo isset($_GET['act']) && $_GET['act']=="edit" ?  $rows['amount'] : ""; ?>">
                                     </div>
                             </div>
                           <div class="container">
