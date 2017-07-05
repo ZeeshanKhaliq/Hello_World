@@ -15,6 +15,7 @@
   $result=mysqli_query($connection,$sql);
     if ($result==true) {
       header("Location: payments.php");
+
     }
     else {
       echo "error";
